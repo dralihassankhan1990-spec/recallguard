@@ -1,0 +1,20 @@
+bash
+cd recallguard/backend && npm install && cp .env.example .env
+cd ../frontend && npm install
+cd ../automation && python -m venv venv && source venv/bin/activate
+pip install -r requirements.txt && playwright install chromium
+
+2. Run (3 terminals):
+
+bash
+# 1: cd backend && npm run dev     → http://localhost:4000
+# 2: cd frontend && npm run dev    → http://localhost:5173
+# 3: cd automation && python scraper.py
+
+3. Verify each phase before trusting the next (per your "phase-controlled" instruction):
+
+Phase 1–2: curl http://localhost:4000/api/health, curl http://localhost:4000/api/suppliers → 5 suppliers appear
+Phase 3: npm test from project root → risk/matching tests pass
+Phase 4–5: run python scraper.py → watch terminal go PLAYWRIGHT → INGESTION → SUCCESS → 92/100 → CRITICAL → HOLD
+Phase 6–7: open the dashboard, confirm it updates without refresh
+Phase 8: click "Trigger Batch Hold" / "Initiate Supplier Audit" → confirm the Action Log grows

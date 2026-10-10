@@ -1,0 +1,11 @@
+node_modules/
+backend/data/*.db
+backend/data/*.db-wal
+backend/data/*.db-shm
+backend/.env
+frontend/dist/
+automation/venv/
+automation/.seen_alerts.json
+automation/__pycache__/
+.DS_Store
+*.log

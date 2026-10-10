@@ -1,0 +1,13 @@
+# Optional future deployment stub — NOT required to run the PoC locally.
+# The PoC is designed to run via `npm run dev` (backend/frontend) and
+# `python scraper.py` (automation) directly on the host. See README.md.
+#
+# version: "3.9"
+# services:
+#   backend:
+#     build: ./backend
+#     ports: ["4000:4000"]
+#     volumes: ["./backend/data:/app/data"]
+#   frontend:
+#     build: ./frontend
+#     ports: ["5173:5173"]
