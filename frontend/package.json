@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "lucide-react": "^0.446.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
+    "recharts": "^2.12.7"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "vite": "^5.4.8"
+  },
+  "name": "recallguard-frontend",
+  "private": true,
+  "retrieved_at": {
+    "user_local": "2026-10-10T12:58:06.077+05:00",
+    "user_timezone": "Asia/Karachi",
+    "utc": "2026-10-10T07:58:06.077Z"
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "type": "module",
+  "version": "2.0.0"
+}

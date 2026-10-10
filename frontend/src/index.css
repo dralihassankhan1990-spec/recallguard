@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #070b16;
+  background-image:
+    radial-gradient(at 15% 10%, rgba(99, 102, 241, 0.22) 0px, transparent 50%),
+    radial-gradient(at 85% 0%, rgba(45, 212, 191, 0.18) 0px, transparent 45%),
+    radial-gradient(at 50% 100%, rgba(244, 63, 94, 0.14) 0px, transparent 50%),
+    radial-gradient(at 90% 80%, rgba(139, 92, 246, 0.16) 0px, transparent 45%);
+  background-attachment: fixed;
+  color: #e6ecf5;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #22304b; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #2a3d63; }
+
+/* ---------- Reusable "attractive dashboard" utility classes ---------- */
+
+.glass-panel {
+  background: linear-gradient(180deg, rgba(20, 29, 52, 0.85) 0%, rgba(15, 23, 41, 0.85) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-panel-hover {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+.glass-panel-hover:hover {
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.2), 0 12px 40px -12px rgba(99, 102, 241, 0.35);
+}
+
+.gradient-text {
+  background-image: linear-gradient(90deg, #6366f1, #2dd4bf 50%, #8b5cf6);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-pan 6s ease infinite;
+}
+
+.shimmer-border {
+  position: relative;
+  isolation: isolate;
+}
+.shimmer-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(120deg, transparent, rgba(45, 212, 191, 0.6), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+/* 3D tilt card — perspective is set on the parent wrapper in TiltCard.jsx */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, box-shadow 0.25s ease;
+  will-change: transform;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  opacity: 0.5;
+  pointer-events: none;
+}
